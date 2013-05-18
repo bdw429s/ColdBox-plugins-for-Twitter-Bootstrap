@@ -27,10 +27,10 @@
 				<ul class="breadcrumb">
 					<cfloop array="#arguments.crumbs#" index="crumb">
 						<cfif isStruct(crumb) AND !structIsEmpty(crumb)>
-							<li><a href="#application.esapiEncoder.encodeForHTMLAttribute(event.buildLink(crumb.url))#">#application.esapiEncoder.encodeForHTML(crumb.label)#</a> <span class="divider">/</span></li>
+							<li><a href="#event.buildLink(crumb.url)#">#crumb.label#</a> <span class="divider">/</span></li>
 						</cfif>
 					</cfloop>
-					<li class="active">#application.esapiEncoder.encodeForHTML(arguments.active)#</li>
+					<li class="active">#arguments.active#</li>
 				</ul>
 			</cfoutput>
 		</cfsavecontent>
